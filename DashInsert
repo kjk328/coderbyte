@@ -1,0 +1,20 @@
+def DashInsert(str)
+  arr = str.to_s.split('').map{|a| a.to_i}
+  # code goes here
+  a = arr.length-2
+  new_array = []
+  (0..a).each do |i|
+    new_array << arr[i]
+    if arr[i] % 2 == 1 && arr[i+1] % 2 == 1 
+      new_array << "-"
+    end
+  end
+  new_array << arr[a+1]
+  return new_array.join
+  
+    
+end
+   
+# keep this function call here 
+# to see how to enter arguments in Ruby scroll down   
+DashInsert(STDIN.gets)           
