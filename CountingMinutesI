@@ -1,0 +1,38 @@
+def CountingMinutesI(str)
+
+  a= str.scan(/\d+|\D/)
+  first_hour = a[0].to_i
+  first_minute = a[2].to_i
+  first = a[3]
+  second_hour = a[6].to_i
+  second_minute = a[8].to_i
+  second = a[9]
+
+  if first == 'a' && first_hour >=12
+    first_hour = first_hour - 12
+  elsif first == 'p' && first_hour <12
+    first_hour = first_hour + 12
+  end
+
+  if second == 'a' && second_hour >=12
+    second_hour = second_hour - 12
+  elsif second == 'p' && second_hour <12
+    second_hour = second_hour + 12
+  end
+
+  first_total = first_hour*60 + first_minute
+  second_total = second_hour*60 + second_minute
+  total = second_total - first_total
+  if total < 0
+    result = total + 1440
+  else
+    result = total
+  end
+
+  return result
+         
+end
+   
+# keep this function call here 
+# to see how to enter arguments in Ruby scroll down   
+CountingMinutesI(STDIN.gets)           
