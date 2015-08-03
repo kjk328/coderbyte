@@ -1,0 +1,10 @@
+def ThirdGreatest(strArr)
+
+  # code goes here
+  return strArr.sort_by{|a| a.length}[-3]
+         
+end
+   
+# keep this function call here 
+# to see how to enter arguments in Ruby scroll down   
+ThirdGreatest(STDIN.gets)           
