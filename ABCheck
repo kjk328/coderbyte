@@ -1,0 +1,21 @@
+def ABCheck(str)
+
+  # code goes here
+  new_str = str.downcase.split('')
+  l = new_str.length-1
+  deter = false
+  (0..3).each do |i|
+    if new_str[i] = "a" 
+      if new_str[i+3] = "b"
+      deter = true
+      end
+    elsif new_str[i] = "b"
+      if new_str[i+3] = "a"
+      deter = true
+      end
+    end
+  end
+  
+  return deter
+         
+end
